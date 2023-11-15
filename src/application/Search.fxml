@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SearchController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/Search%20Background%20Image.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="usernameLabel" alignment="CENTER" layoutX="886.0" layoutY="19.0" prefHeight="35.0" styleClass="greetingText" text="Welcome back Mr. User!">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="1121.0" layoutY="19.0" mnemonicParsing="false" onAction="#logout" styleClass="btn" text="LOGOUT" />
+      <AnchorPane fx:id="searchCard" layoutX="180.0" layoutY="165.0" opacity="0.0" prefHeight="491.0" prefWidth="789.0" style="-fx-background-color: white;" styleClass="card">
+         <children>
+            <AnchorPane layoutX="526.0" prefHeight="491.0" prefWidth="394.0" style="-fx-background-radius: 0 8 8 0; -fx-border-radius: 0 8 8 0;">
+               <children>
+                  <ImageView fitHeight="491.0" fitWidth="789.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/Card%20Background.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label layoutX="68.0" layoutY="41.0" styleClass="searchCardTitle" text="FIND A PLACE TO STAY!" />
+            <Line endX="199.0" layoutX="169.0" layoutY="79.0" opacity="0.5" startX="-100.0" />
+            <TextField fx:id="destinationField" layoutX="68.0" layoutY="119.0" prefHeight="25.0" prefWidth="272.0" promptText="Where are you traveling?" styleClass="input" />
+            <DatePicker fx:id="fromDate" layoutX="66.0" layoutY="340.0" onAction="#getDate" prefHeight="25.0" prefWidth="175.0" promptText="From date" styleClass="datepicker" />
+            <Spinner fx:id="peopleCountSpinner" accessibleText="yo" editable="true" layoutX="67.0" layoutY="205.0" prefHeight="25.0" prefWidth="272.0" styleClass="spinner" />
+            <Label layoutX="68.0" layoutY="177.0" styleClass="searchFormLabel" text="Amount of people traveling" />
+            <CheckBox fx:id="petCheckbox" layoutX="69.0" layoutY="272.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" styleClass="checkbox" text="Are you bringing any pets?" />
+            <Button fx:id="searchBtn" contentDisplay="RIGHT" graphicTextGap="8.0" layoutX="68.0" layoutY="403.0" mnemonicParsing="false" onAction="#submitSearch" styleClass="btn" text="SEARCH" />
+            <DatePicker fx:id="toDate" layoutX="263.0" layoutY="340.0" onAction="#getDate" prefHeight="25.0" prefWidth="175.0" promptText="To date" styleClass="datepicker" />
+            <Label layoutX="67.0" layoutY="310.0" styleClass="searchFormLabel" text="When are you traveling?" />
+            <Label fx:id="errorText" layoutX="234.0" layoutY="412.0" styleClass="errorText" />
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

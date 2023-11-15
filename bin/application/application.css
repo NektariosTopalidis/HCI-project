@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+
+.card{
+	-fx-background-color: white;
+	-fx-border-radius: 8px;
+	-fx-effect: dropshadow(three-pass-box,rgba(0, 0, 0, 0.13),	13px, 0px, 0px, 0px);
+	-fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+.title{
+	-fx-font-family: 'Montserrat';
+	-fx-font-weight: bold;
+}
+
+.paragraph{
+	-fx-font-family: Arial;
+}
+
+.loginTitle{
+	-fx-font-family: 'Montserrat';
+	-fx-font-weight: bold;
+	-fx-text-fill: #3C9FFF;
+	-fx-font-size: 36px;
+}
+
+.input{
+	-fx-border-color: rgba(0, 0, 0, 0.30);
+	-fx-focus-color: transparent;
+	-fx-background-color: white;
+	-fx-background-insets: 0;
+	-fx-padding: 11px 25px 11px 25px;
+	-fx-border-radius: 4px;
+	-fx-font-size: 14px;
+	-fx-font-family: 'Montserrat';
+}
+
+.input:focused{
+	-fx-border-color: rgba(0, 0, 0, 1);
+}
+
+.datepicker{
+	-fx-border-color: rgba(0, 0, 0, 0.30);
+	-fx-background-color: white;
+	-fx-border-radius: 4px;
+}
+
+.datepicker .text-field{
+	-fx-padding: 11px 25px 11px 25px;
+	-fx-font-size: 14px;
+	-fx-background-color: white;
+	-fx-font-family: 'Montserrat';
+}
+
+.datepicker .arrow-button{
+	-fx-background-color:  rgba(0, 0, 0, 0.30);
+	-fx-cursor: hand;
+	-fx-font-size: 20px;
+}
+
+.datepicker .arrow-button:hover{
+	-fx-background-color:  rgba(0, 0, 0, 0.50);
+}
+
+.datepicker .arrow-button .arrow{
+	-fx-background-color: white;
+}
+
+.checkbox{
+	-fx-font-family: 'Montserrat';
+	-fx-font-size: 14px;
+	-fx-text-fill: black;
+}
+
+.checkbox .box {
+    -fx-background-color: white;
+    -fx-border-radius: 4px;
+    -fx-border-color: rgba(0, 0, 0, 0.30);
+}
+
+.checkbox:selected .mark {
+    -fx-background-color: white;
+}
+
+.checkbox:selected .box {
+    -fx-border-color: rgba(0, 0, 0, 0.50);
+    -fx-background-color: rgba(0, 0, 0, 0.50);
+}
+
+.errorText{
+	-fx-text-fill: red;
+	-fx-font-size: 12px;
+	-fx-font-family: Arial;
+}
+
+.btn{
+	-fx-font-family: 'Montserrat';
+	-fx-font-weight: bold;
+	-fx-cursor: hand;
+	-fx-background-color: #3B9FFF;
+	-fx-text-fill: white;
+	-fx-border-radius: 8px;
+	-fx-font-size: 14px;
+	-fx-padding: 8px 24px 8px 24px;
+	
+}
+
+.btn:hover{
+	-fx-font-family: 'Montserrat';
+	-fx-font-weight: bold;
+	-fx-cursor: hand;
+	-fx-background-color: #2D79C2;
+	-fx-text-fill: white;
+	-fx-border-radius: 8px;
+	-fx-font-size: 14px;
+	-fx-padding: 8px 24px 8px 24px;
+}
+
+.greetingText{
+	-fx-font-family: 'Montserrat';
+	-fx-font-weight: bold;
+	-fx-text-fill: white;
+	-fx-font-size: 14px;
+}
+
+.searchCardTitle{
+	-fx-font-family: 'Montserrat';
+	-fx-font-weight: bold;
+	-fx-text-fill: black;
+	-fx-font-size: 24px;
+}
+
+.radioBtn{
+	-fx-font-family: 'Montserrat';
+	-fx-font-size: 14px;
+}
+
+.spinner{
+	-fx-border-color: rgba(0, 0, 0, 0.30);
+    -fx-border-radius: 4px;
+	-fx-font-size: 14px;
+	-fx-background-color: white;
+	-fx-text-fill: black;
+	-fx-font-family: 'Montserrat';
+}
+
+.spinner > .text-field{
+	-fx-background-color: white;
+	-fx-padding: 11px 25px 11px 25px;
+}
+
+.spinner:focused{
+	-fx-border-color: rgba(0, 0, 0, 1);
+}
+
+.spinner .increment-arrow-button, .spinner .decrement-arrow-button{
+	-fx-background-color: transparent;
+	-fx-cursor: hand;
+}
+
+.spinner .increment-arrow-button:hover,.spinner .decrement-arrow-button:hover{
+	-fx-background-color: rgba(0,0,0,0.1);
+}
+
+.searchFormLabel{
+	-fx-font-size: 14px;
+	-fx-text-fill: rgba(0, 0, 0, 0.30);
+	-fx-font-family: 'Montserrat';
+}
+
+.listing{
+	-fx-pref-height: 206px;
+	-fx-pref-width: 479px;
+	-fx-border-color: rgba(0, 0, 0, 0.30);
+	-fx-border-width: 2px;
+	-fx-border-radius: 8px;
+	-fx-background-radius: 8px;
+}
+
+.listing > .listingThumbnail{
+	-fx-fill: #D9D9D9;
+}
+
+.listing > .listingName{
+	-fx-text-fill: black;
+	-fx-font-family: 'Montserrat';
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+}
+
+.listing > .listingLocation{
+	-fx-font-family: Arial;
+	-fx-font-size: 10px;
+	-fx-text-fill: rgba(0, 0, 0, 0.50);
+}
+
+.listing > .listingDescription{
+	-fx-font-family: Arial;
+	-fx-font-size: 10px;
+	-fx-text-fill: black;
+}
+
+.listing > .listingPriceNumber{
+	-fx-font-family: Arial;
+	-fx-font-size: 20px;
+	-fx-text-fill: black;
+	-fx-font-weight: bold;
+}
+
+.listing > .listingPriceText{
+	-fx-font-family: Arial;
+	-fx-font-size: 16px;
+	-fx-text-fill: rgba(0, 0, 0, 0.50);
+	-fx-font-weight: bold;
+}
+
+.resultCounter{
+	-fx-font-family: 'Montserrat';
+}
