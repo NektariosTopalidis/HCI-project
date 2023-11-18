@@ -53,6 +53,22 @@ public class Router {
 			
 			break;
 		}
+		case "Accomodation Page":{
+			
+			User loggedInUser = ((User)parameters.get(0));
+			SearchForm searchFormData = ((SearchForm)parameters.get(1));
+			Accomodation selectedListing = ((Accomodation)parameters.get(2));
+
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("AccomodationPage.fxml"));
+			root = loader.load();
+			
+			AccomodationPageController apc = loader.getController();
+			apc.setLoggedInUser(loggedInUser);
+			apc.setSearchFormData(searchFormData);
+			apc.setSelectedListing(selectedListing);
+			
+			break;
+		}
 		default:
 			break;
 		}

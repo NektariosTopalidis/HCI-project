@@ -1,15 +1,14 @@
 package application;
 
-
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 
 public class Accomodation {
+	private String id;
 	private String name;
 	private Integer stars;
 	private String city;
@@ -17,9 +16,14 @@ public class Accomodation {
 	private String description;
 	private Integer price;
 	private String thumbnail;
+	private String type;
 	private String[] images;
 	private String[] amenities;
 	private Comment[] comments;
+	
+	Button seeMoreBtn = new Button();
+
+	
 	
 	public String getName() {
 		return name;
@@ -61,8 +65,17 @@ public class Accomodation {
 	public String getAddress() {
 		return address;
 	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public String getType() {
+		return type;
+	}
 
-	public Accomodation(String name, Integer stars, String city, String address, String description, Integer price,String thumbnail, String[] images, String[] amenities, Comment[] comments) {
+	public Accomodation(String id, String name, Integer stars, String city, String address, String description, Integer price,String thumbnail, String type, String[] images, String[] amenities, Comment[] comments) {
+		this.id = id;
 		this.name = name;
 		this.stars = stars;
 		this.city = city;
@@ -70,14 +83,17 @@ public class Accomodation {
 		this.description = description;
 		this.price = price;
 		this.thumbnail = thumbnail;
+		this.type = type;
 		this.images = images;
 		this.amenities = amenities;
 		this.comments = comments;
+
+		seeMoreBtn.getStyleClass().add("btn");
+		seeMoreBtn.setText("SEE MORE");
 	}
 	
 	
 	public AnchorPane createListing(Integer order) {
-		
 		AnchorPane listing = new AnchorPane();
 
 		listing.getStyleClass().add("listing");
@@ -117,7 +133,6 @@ public class Accomodation {
 		starsContainer.setPrefHeight(13);
 		starsContainer.setPrefWidth(73);
 		
-		System.out.println(this.stars);
 		
 		Image yellowStar = new Image(getClass().getResourceAsStream("YellowStar.png"));
 		Image greyStar = new Image(getClass().getResourceAsStream("GreyStar.png"));
@@ -206,14 +221,12 @@ public class Accomodation {
 		priceText.setLayoutX(259);
 		priceText.setLayoutY(151);
 		
-		Button seeMoreBtn = new Button();
-		seeMoreBtn.getStyleClass().add("btn");
-		seeMoreBtn.setText("SEE MORE");
 		
 		listing.getChildren().add(seeMoreBtn);
 		
 		seeMoreBtn.setLayoutX(320);
 		seeMoreBtn.setLayoutY(145);
+				
 		
 		return listing;
 	}

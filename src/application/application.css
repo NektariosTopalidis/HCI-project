@@ -71,6 +71,7 @@
 	-fx-font-family: 'Montserrat';
 	-fx-font-size: 14px;
 	-fx-text-fill: black;
+	-fx-cursor: hand;
 }
 
 .checkbox .box {
@@ -84,6 +85,28 @@
 }
 
 .checkbox:selected .box {
+    -fx-border-color: rgba(0, 0, 0, 0.50);
+    -fx-background-color: rgba(0, 0, 0, 0.50);
+}
+
+.filterCheckbox{
+	-fx-font-family: Arial;
+	-fx-font-size: 10px;
+	-fx-text-fill: black;
+	-fx-cursor: hand;
+}
+
+.filterCheckbox .box {
+    -fx-background-color: white;
+    -fx-border-radius: 4px;
+    -fx-border-color: rgba(0, 0, 0, 0.30);
+}
+
+.filterCheckbox:selected .mark {
+    -fx-background-color: white;
+}
+
+.filterCheckbox:selected .box {
     -fx-border-color: rgba(0, 0, 0, 0.50);
     -fx-background-color: rgba(0, 0, 0, 0.50);
 }
@@ -169,6 +192,14 @@
 	-fx-font-family: 'Montserrat';
 }
 
+.scrollPane > .viewport{
+	-fx-background-color: transparent;
+}
+
+.scrollPane{
+	-fx-background-color: transparent;
+}
+
 .listing{
 	-fx-pref-height: 206px;
 	-fx-pref-width: 479px;
@@ -217,4 +248,44 @@
 
 .resultCounter{
 	-fx-font-family: 'Montserrat';
+}
+
+.noResultsText{
+	-fx-font-family: 'Montserrat';
+	-fx-font-size: 20px;
+	-fx-text-fill: rgba(0, 0, 0, 0.50);
+	-fx-font-weight: bold;
+}
+
+.filtersTitleContainer{
+	-fx-background-color: #3B9FFF;
+	-fx-background-radius: 8 8 0 0; 
+	-fx-border-radius: 8 8 0 0;
+}
+
+.filterTitleText{
+	-fx-font-family: 'Montserrat';
+	-fx-font-size: 14px;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}
+
+.filterGroup{
+	-fx-border-width: 0 0 1 0;
+	-fx-border-style: solid;
+	-fx-border-color: rgba(0,0,0,0.30);
+}
+
+.goBackBtn{
+	-fx-font-family: 'Montserrat';
+	-fx-font-weight: bold;
+	-fx-cursor: hand;
+	-fx-background-color: transparent;	
+	-fx-font-size: 14px; 
+}
+
+.goBackBtn:hover{
+	-fx-border-width: 0 0 1 0;
+	-fx-border-style: solid;
+	-fx-border-color: white;
 }
