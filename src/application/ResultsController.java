@@ -17,12 +17,26 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 public class ResultsController implements Initializable{
-	
 	String lorem = "Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.";
-	Accomodation listing1 = new Accomodation("l1","Mirragio", 2, "Thessaloniki", "Konstantinou Palaiologou 26", lorem, 120, null, "Hotel Room", null, null, null);
-	Accomodation listing2 = new Accomodation("l2","Mirragio", 3, "Thessaloniki", "Konstantinou Palaiologou 26", lorem, 120, null, "Whole House", null, null, null);
-	Accomodation listing3 = new Accomodation("l3","Mirragio", 4, "Thessaloniki", "Konstantinou Palaiologou 26", lorem, 120, null, "Apartment", null, null, null);
-	Accomodation listing4 = new Accomodation("l4","Mirragio", 2, "Volos", "Konstantinou Palaiologou 26", lorem, 120, null, "Apartment", null, null, null);
+	String[] amenities = {"Parking","Breakfast","Bar","No Smoking","Wifi","Room Service"};
+	Comment comment1 = new Comment("User1",3,"Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.");
+	Comment comment2 = new Comment("User2",4,"Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.");
+	Comment comment3 = new Comment("User3",2,"Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.");
+	Comment[] comments = {comment1,comment2,comment3};
+	
+	Image listing1Thumbnail = new Image(getClass().getResourceAsStream("hotel1Thumbnail.jpg"));
+	Image[] listing1Images = {new Image(getClass().getResourceAsStream("hotel1Image1.jpg")),new Image(getClass().getResourceAsStream("hotel1Image2.jpg")),new Image(getClass().getResourceAsStream("hotel1Image3.jpg")),new Image(getClass().getResourceAsStream("hotel1Image4.jpg"))};
+	Accomodation listing1 = new Accomodation("l1","Hotel1", 2, "Thessaloniki", "Address of hotel1", lorem, 40, listing1Thumbnail, "Hotel Room", listing1Images, amenities, comments);
+	
+	Image listing2Thumbnail = new Image(getClass().getResourceAsStream("hotel2Thumbnail.jpg"));
+	Image[] listing2Images = {new Image(getClass().getResourceAsStream("hotel2Image1.jpg")),new Image(getClass().getResourceAsStream("hotel2Image2.jpg")),new Image(getClass().getResourceAsStream("hotel2Image3.jpg")),new Image(getClass().getResourceAsStream("hotel2Image4.jpg"))};
+	Accomodation listing2 = new Accomodation("l2","Hotel2", 3, "Thessaloniki", "Address of hotel2", lorem, 75, listing2Thumbnail, "Whole House", listing2Images, amenities, comments);
+	
+	Image listing3Thumbnail = new Image(getClass().getResourceAsStream("hotel3Thumbnail.jpg"));
+	Image[] listing3Images = {new Image(getClass().getResourceAsStream("hotel3Image1.jpg")),new Image(getClass().getResourceAsStream("hotel3Image2.jpg")),new Image(getClass().getResourceAsStream("hotel3Image3.jpg")),new Image(getClass().getResourceAsStream("hotel3Image4.jpg"))};
+	Accomodation listing3 = new Accomodation("l3","Hotel3", 4, "Thessaloniki", "Address of hotel3", lorem, 120, listing3Thumbnail, "Apartment", listing3Images, amenities, comments);
+	
+	Accomodation listing4 = new Accomodation("l4","Hotel4", 2, "Volos", "Address of hotel4", lorem, 26, listing3Thumbnail, "Apartment", listing3Images, amenities, comments);
 	
 	Accomodation[] listings = {listing1,listing2,listing3,listing4};
 	ArrayList<Accomodation> listingsToShow = new ArrayList<Accomodation>();

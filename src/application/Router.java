@@ -69,6 +69,19 @@ public class Router {
 			
 			break;
 		}
+		case "Book Form":{
+			User loggedInUser = ((User)parameters.get(0));
+			SearchForm searchFormData = ((SearchForm)parameters.get(1));
+			Accomodation selectedListing = ((Accomodation)parameters.get(2));
+
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("BookForm.fxml"));
+			root = loader.load();
+			
+			BookFormController bfc = loader.getController();
+			bfc.setLoggedInUser(loggedInUser);
+			bfc.setSearchFormData(searchFormData);
+			bfc.setSelectedListing(selectedListing);
+		}
 		default:
 			break;
 		}

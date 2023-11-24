@@ -1,5 +1,8 @@
 package application;
 
+import javafx.geometry.Pos;
+import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -15,9 +18,9 @@ public class Accomodation {
 	private String address;
 	private String description;
 	private Integer price;
-	private String thumbnail;
+	private Image thumbnail;
 	private String type;
-	private String[] images;
+	private Image[] images;
 	private String[] amenities;
 	private Comment[] comments;
 	
@@ -42,11 +45,11 @@ public class Accomodation {
 		return price;
 	}
 
-	public String getThumbnail() {
+	public Image getThumbnail() {
 		return thumbnail;
 	}
 
-	public String[] getImages() {
+	public Image[] getImages() {
 		return images;
 	}
 
@@ -74,7 +77,7 @@ public class Accomodation {
 		return type;
 	}
 
-	public Accomodation(String id, String name, Integer stars, String city, String address, String description, Integer price,String thumbnail, String type, String[] images, String[] amenities, Comment[] comments) {
+	public Accomodation(String id, String name, Integer stars, String city, String address, String description, Integer price,Image thumbnail, String type, Image[] images, String[] amenities, Comment[] comments) {
 		this.id = id;
 		this.name = name;
 		this.stars = stars;
@@ -92,6 +95,57 @@ public class Accomodation {
 		seeMoreBtn.setText("SEE MORE");
 	}
 	
+	public AnchorPane createAmenityLabel(Integer index) {
+//		AnchorPane amenitiesDisplay = new AnchorPane();
+//		amenitiesDisplay.setPrefWidth(668);
+//		amenitiesDisplay.setPrefHeight(116);
+//		amenitiesDisplay.setLayoutX(294);
+//		amenitiesDisplay.setLayoutY(792);
+		
+
+		AnchorPane amenity = new AnchorPane();
+		amenity.getStyleClass().add("amenity");
+		amenity.setPrefWidth(214);
+		amenity.setPrefHeight(52);
+			
+		Label amenityText = new Label();
+		amenityText.setText(this.amenities[index]);
+		amenityText.getStyleClass().add("amenityText");
+		amenityText.setPrefWidth(214);
+		amenityText.setPrefHeight(52);
+		amenityText.setAlignment(Pos.CENTER);
+			
+		amenity.getChildren().add(amenityText);
+			
+		Integer amenityWidth = 214;
+		Integer amenityHeight = 52;
+		Integer padding = 12;
+		
+		
+		if(index<=2) {				
+			amenity.setLayoutX((amenityWidth + padding) * index);
+			amenity.setLayoutY(0);
+		}
+		else {
+			amenity.setLayoutX((amenityWidth + padding) * (index-3));
+			amenity.setLayoutY(amenityHeight + padding);
+		}
+		
+		return amenity;
+	}
+	
+	 private Node roundedNode(Node inputNode) {
+		    final Rectangle clip = new Rectangle();
+		    clip.setArcHeight(8);
+		    clip.setArcWidth(8);
+		    clip.setWidth(inputNode.getLayoutBounds().getWidth());
+		    clip.setHeight(inputNode.getLayoutBounds().getHeight());
+		    inputNode.setClip(clip);
+		 
+		    Group group = new Group(inputNode);
+		    
+		    return group;
+	}
 	
 	public AnchorPane createListing(Integer order) {
 		AnchorPane listing = new AnchorPane();
@@ -101,18 +155,34 @@ public class Accomodation {
 		listing.setLayoutY(242*order);
 		
 		//create image
-		Rectangle rect = new Rectangle();
-		rect.getStyleClass().add("listingThumbnail");
-
-		rect.setHeight(175);
-		rect.setWidth(175);
-		rect.setArcHeight(8);
-		rect.setArcWidth(8);
-		
-		listing.getChildren().add(rect);
-		
-		rect.setX(18);
-		rect.setY(15);
+		if(this.thumbnail != null) {
+			ImageView thumbnail = new ImageView();
+			thumbnail.setImage(this.thumbnail);
+						
+			thumbnail.setFitHeight(175);
+			thumbnail.setFitWidth(175);
+			
+			Node roundedImageView = roundedNode(thumbnail);
+			
+			listing.getChildren().add(roundedImageView);
+			
+			roundedImageView.setLayoutX(18);
+			roundedImageView.setLayoutY(15);
+		}
+		else {
+			Rectangle rect = new Rectangle();
+			rect.getStyleClass().add("listingNoThumbnail");
+			
+			rect.setHeight(175);
+			rect.setWidth(175);
+			rect.setArcHeight(8);
+			rect.setArcWidth(8);
+			
+			listing.getChildren().add(rect);
+			
+			rect.setX(18);
+			rect.setY(15);
+		}
 		
 		
 		//create name
@@ -218,8 +288,13 @@ public class Accomodation {
 		
 		listing.getChildren().add(priceText);
 		
-		priceText.setLayoutX(259);
 		priceText.setLayoutY(151);
+		if(this.price > 99) {			
+			priceText.setLayoutX(259);
+		}
+		else {
+			priceText.setLayoutX(249);
+		}
 		
 		
 		listing.getChildren().add(seeMoreBtn);
