@@ -103,5 +103,10 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
+      <Button fx:id="goBackBtn" graphicTextGap="8.0" layoutX="741.0" layoutY="23.7" mnemonicParsing="false" onAction="#goToAbout" style="-fx-text-fill: black;" styleClass="goBackBtnBlack" text="About">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

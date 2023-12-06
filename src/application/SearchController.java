@@ -135,7 +135,20 @@ public class SearchController implements Initializable {
 			errorText.setText("Please fill all the fields.");
 		}
 	}
-
+	
+	public void goToAbout(ActionEvent e) {
+		
+		List<Object> parameters = new ArrayList<Object>();
+		
+		parameters.add(loggedInUser);
+		
+		try {
+			this.router.navigate(e, "About", parameters);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		

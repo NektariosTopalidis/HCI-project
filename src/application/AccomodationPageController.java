@@ -87,6 +87,20 @@ public class AccomodationPageController implements Initializable{
 		this.searchFormData = sf;
 	}
 	
+	public void goToAbout(ActionEvent e) {
+		
+		List<Object> parameters = new ArrayList<Object>();
+		
+		parameters.add(loggedInUser);
+		
+		try {
+			this.router.navigate(e, "About", parameters);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+	
+	
 	public void setSelectedListing(Accomodation sl) {
 		this.selectedListing = sl;
 		

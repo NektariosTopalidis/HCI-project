@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AboutController">
+   <children>
+      <Label fx:id="usernameLabel" alignment="CENTER" layoutX="886.0" layoutY="19.0" prefHeight="35.0" style="-fx-text-fill: black;" styleClass="greetingText" text="Welcome back Mr. User!">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="1121.0" layoutY="19.0" mnemonicParsing="false" onAction="#logout" styleClass="btn" text="LOGOUT" />
+      <Button graphicTextGap="8.0" layoutX="741.0" layoutY="23.7" mnemonicParsing="false" onAction="#goToSearch" style="-fx-text-fill: black;" styleClass="goBackBtnBlack" text="New Search">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <ScrollPane hbarPolicy="NEVER" layoutY="100.0" prefHeight="620.0" prefWidth="1280.0" style="-fx-background-color: white;">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="620.0" prefWidth="1280.0" style="-fx-background-color: white;">
+               <children>
+                  <Label alignment="TOP_CENTER" layoutY="20.0" prefWidth="1280.0" style="-fx-font-family: 'Montserrat';" text="Discover Greece: Your Portal to Unforgettable Hospitality" wrapText="true">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="340.0" layoutY="78.0" prefHeight="73.0" prefWidth="600.0" text="Embark on a journey through the heart of Greece with our hotel booking service, where we go beyond mere reservations to curate an experience that lingers in your memories. Our commitment is not just to provide you with a place to stay, but to open the door to the unmatched beauty and warmth of Greece." textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutY="159.0" prefWidth="1280.0" style="-fx-font-family: 'Montserrat';" text="Why Choose Us?" wrapText="true">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="340.0" layoutY="217.0" prefHeight="71.0" prefWidth="600.0" text="Booking with us is a seamless experience. Our user-friendly platform empowers you to explore a diverse range of accommodations, compare prices, and secure your reservation with ease. Whether you're planning a romantic getaway, a family adventure, or a solo exploration, we have the perfect accommodation awaiting your arrival." textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutY="333.0" prefWidth="1280.0" style="-fx-font-family: 'Montserrat';" text="Our Pledge to You" wrapText="true">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="340.0" layoutY="391.0" prefHeight="77.0" prefWidth="600.0" text="Recognizing that your choice of accommodation shapes your travel experience, we partner exclusively with hotels committed to excellence in hospitality. Each property embodies the warmth and welcoming spirit that Greece is celebrated for." textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutY="492.0" prefWidth="1280.0" style="-fx-font-family: 'Montserrat';" text="App Creator Information" wrapText="true">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="340.0" layoutY="550.0" prefHeight="16.0" prefWidth="600.0" text="Student ID ( AM ):  iee2020253" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="340.0" layoutY="570.0" prefHeight="16.0" prefWidth="600.0" text="Full Name:  Nektarios Topalidis" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" layoutX="340.0" layoutY="590.0" prefHeight="16.0" prefWidth="600.0" text="Email:  nektariostopalides@gmail.com" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

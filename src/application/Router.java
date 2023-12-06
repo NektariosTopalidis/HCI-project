@@ -79,8 +79,33 @@ public class Router {
 			
 			BookFormController bfc = loader.getController();
 			bfc.setLoggedInUser(loggedInUser);
-			bfc.setSearchFormData(searchFormData);
+			bfc.setSearchFormData(searchFormData,selectedListing.getPrice());
 			bfc.setSelectedListing(selectedListing);
+			
+			break;
+		}
+		case "Completion Page": {
+			
+			String bookingID = ((String)parameters.get(0));
+			User loggedInUser = ((User)parameters.get(1));
+			
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("CompletionPage.fxml"));
+			root = loader.load();
+			
+			CompletionPageController cpc = loader.getController();
+			cpc.getBookingID(bookingID);
+			cpc.setUser(loggedInUser);
+			
+			break;
+		}
+		case "About": {
+			User loggedInUser = ((User)parameters.get(0));
+			
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("About.fxml"));
+			root = loader.load();
+			
+			AboutController ac = loader.getController();
+			ac.setLoggedInUser(loggedInUser);
 		}
 		default:
 			break;

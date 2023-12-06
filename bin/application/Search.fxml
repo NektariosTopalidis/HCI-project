@@ -48,5 +48,10 @@
             <Label layoutX="67.0" layoutY="310.0" styleClass="searchFormLabel" text="When are you traveling?" />
             <Label fx:id="errorText" layoutX="234.0" layoutY="412.0" styleClass="errorText" />
          </children></AnchorPane>
+      <Button fx:id="goBackBtn" graphicTextGap="8.0" layoutX="741.0" layoutY="23.7" mnemonicParsing="false" onAction="#goToAbout" style="-fx-text-fill: white;" styleClass="goBackBtn" text="About">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -1,0 +1,29 @@
+Booking ID: BID815676
+User:
+  -> First Name: Nektarios
+  -> Last Name: Topalidis
+  -> Gender: male
+  -> Username: nektop
+  -> Email: nektariostopalides@info.gr
+  -> Phone Number: 6900000000
+
+Accomodation:
+  -> Name: Hotel1
+  -> City: Thessaloniki
+  -> Address: Address of hotel1
+  -> Accomodation Type: Hotel Room
+  -> Stars: 2
+  -> Price per night: 40
+
+Booking Information:
+  -> From Date: 2023-11-27
+  -> To Date: 2023-11-28
+  -> Total Days Staying: 1
+  -> Total Price: 40
+  -> Arrival Time: 18:00
+  -> Bringing Pets: false
+  -> Payment Method: Cash Upon Arrival
+  -> Amount Of People Coming: 2
+
+
+

@@ -8,7 +8,7 @@ public class SearchForm {
 	private Boolean petCheck;
 	private LocalDate fromDate;
 	private LocalDate toDate;
-	
+
 	public SearchForm(String destination,Integer peopleAmount,Boolean petCheck,LocalDate fromDate,LocalDate toDate) {
 		this.destination = destination;
 		this.peopleAmount = peopleAmount;
@@ -35,5 +35,25 @@ public class SearchForm {
 
 	public LocalDate getToDate() {
 		return toDate;
+	}
+	
+	public void setDestination(String destination) {
+		this.destination = destination;
+	}
+
+	public void setPeopleAmount(Integer peopleAmount) {
+		this.peopleAmount = peopleAmount;
+	}
+
+	public void setPetCheck(Boolean petCheck) {
+		this.petCheck = petCheck;
+	}
+
+	public void setFromDate(LocalDate fromDate) {
+		this.fromDate = fromDate;
+	}
+
+	public void setToDate(LocalDate toDate) {
+		this.toDate = toDate;
 	}
 }

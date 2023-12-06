@@ -123,6 +123,19 @@ public class ResultsController implements Initializable{
 		resultsCounter.setText("Results: " + listingsToShow.size());
 	}
 	
+	public void goToAbout(ActionEvent e) {
+		
+		List<Object> parameters = new ArrayList<Object>();
+		
+		parameters.add(loggedInUser);
+		
+		try {
+			this.router.navigate(e, "About", parameters);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+	
 	public void setupScrollPane() {
 		if(this.tempListingsToShow.size() > 0) {	
 			
