@@ -54,7 +54,6 @@ public class BookFormController implements Initializable{
 	
 	@FXML
 	private Spinner<Integer> peopleCountSpinner;
-	@SuppressWarnings("unused")
 	private Integer currentValue;
 	
 	@FXML
@@ -256,6 +255,11 @@ public class BookFormController implements Initializable{
 			
 			this.searchFormData.setToDate(toDateValue);
 		}
+		
+		Integer amountOfNights = (int) ChronoUnit.DAYS.between(fromDateValue, toDateValue);
+		
+		this.amountOfNightsLabel.setText(amountOfNights.toString() + " nigths");
+		this.totalPriceLabel.setText((this.selectedListing.getPrice() * amountOfNights) + "€");
 	}
 	
 	private String deleteLastChar(String text) {
@@ -420,6 +424,19 @@ public class BookFormController implements Initializable{
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		fromDate.getEditor().setEditable(false);
+		toDate.getEditor().setEditable(false);
+
+		
+		fromDate.setDayCellFactory(picker -> new DateCell() {
+	        public void updateItem(LocalDate date, boolean empty) {
+	            super.updateItem(date, empty);
+	            LocalDate today = LocalDate.now();
+
+	            setDisable(empty || date.compareTo(today) < 0 );
+	        }
+		});
 		
 		this.errorLabel.setWrapText(true);
 		
